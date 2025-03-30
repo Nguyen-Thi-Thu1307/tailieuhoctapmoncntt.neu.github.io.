@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Liệu Học Tập - Chia Sẻ Kiến Thức</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --danger-color: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 0.5rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .hero {
+            background: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subjects {
+            padding: 2rem 0;
+        }
+        
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .subject-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .subject-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .subject-card-content {
+            padding: 15px;
+        }
+        
+        .subject-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .subject-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tài Liệu Học Tập</h1>
+            <p>Chia sẻ kiến thức - Kết nối cộng đồng</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#subjects">Môn học</a></li>
+            <li><a href="#about">Về tôi</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Chào mừng đến với trang tài liệu học tập</h2>
+            <p>Nơi chia sẻ kiến thức các môn học đại cương và chuyên ngành CNTT</p>
+        </div>
+    </section>
+    
+    <section class="subjects container" id="subjects">
+        <h2>Các môn học</h2>
+        <p>Chọn môn học để xem tài liệu và bài giảng</p>
+        
+        <div class="subject-grid">
+            <div class="subject-card">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Vật lý đại cương">
+                <div class="subject-card-content">
+                    <h3>Vật lý đại cương</h3>
+                    <p>Tài liệu, bài giảng, bài tập và đề thi môn Vật lý đại cương</p>
+                    <a href="#" class="btn">Xem tài liệu</a>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Toán rời rạc">
+                <div class="subject-card-content">
+                    <h3>Toán rời rạc</h3>
+                    <p>Tài liệu, bài giảng, bài tập và đề thi môn Toán rời rạc</p>
+                    <a href="#" class="btn">Xem tài liệu</a>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Nhập môn CNTT">
+                <div class="subject-card-content">
+                    <h3>Nhập môn Công nghệ thông tin</h3>
+                    <p>Tài liệu, bài giảng và các khái niệm cơ bản về CNTT</p>
+                    <a href="#" class="btn">Xem tài liệu</a>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Kinh tế vi mô">
+                <div class="subject-card-content">
+                    <h3>Kinh tế vi mô</h3>
+                    <p>Tài liệu, bài giảng và bài tập môn Kinh tế vi mô</p>
+                    <a href="#" class="btn">Xem tài liệu</a>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Lập trình cơ bản">
+                <div class="subject-card-content">
+                    <h3>Lập trình cơ bản</h3>
+                    <p>Tài liệu học lập trình từ cơ bản đến nâng cao</p>
+                    <a href="#" class="btn">Xem tài liệu</a>
+                </div>
+            </div>
+            
+            <div class="subject-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cấu trúc dữ liệu">
+                <div class="subject-card-content">
+                    <h3>Cấu trúc dữ liệu</h3>
+                    <p>Tài liệu và bài tập về các cấu trúc dữ liệu cơ bản</p>
+                    <a href="#" class="btn">Xem tài liệu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about container" id="about">
+        <h2>Về tôi</h2>
+        <div style="display: flex; align-items: center; gap: 20px; margin-top: 20px;">
+            <img src="https://via.placeholder.com/150" alt="Avatar" style="border-radius: 50%;">
+            <div>
+                <p>Xin chào! Tôi là sinh viên/sinh viên đã tốt nghiệp ngành Công nghệ thông tin. Tôi tạo trang web này để chia sẻ những tài liệu học tập mà tôi đã tích lũy được trong quá trình học tập.</p>
+                <p>Mong rằng những tài liệu này sẽ hữu ích cho các bạn!</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact container" id="contact">
+        <h2>Liên hệ</h2>
+        <form style="max-width: 600px; margin: 20px auto;">
+            <div style="margin-bottom: 15px;">
+                <label for="name" style="display: block; margin-bottom: 5px;">Họ tên</label>
+                <input type="text" id="name" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="email" style="display: block; margin-bottom: 5px;">Email</label>
+                <input type="email" id="email" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="message" style="display: block; margin-bottom: 5px;">Nội dung</label>
+                <textarea id="message" rows="5" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+            </div>
+            <button type="submit" class="btn">Gửi liên hệ</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Tài Liệu Học Tập. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Simple form handling
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất có thể.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
